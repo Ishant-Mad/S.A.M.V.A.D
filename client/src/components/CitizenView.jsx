@@ -4,6 +4,8 @@ import { Search, ArrowRight, Shield, CheckCircle, XCircle, Home, Camera, User, M
 import toast from 'react-hot-toast';
 import { motion, AnimatePresence } from 'framer-motion';
 
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5001';
+
 const CitizenView = () => {
   const [activeTab, setActiveTab] = useState('home');
   const [query, setQuery] = useState('');
@@ -14,7 +16,7 @@ const CitizenView = () => {
     if (!query.trim()) return toast.error("Please enter text");
     setLoading(true); setResult(null);
     try {
-      const res = await axios.post('http://localhost:5000/api/verify', { query });
+      const res = await axios.post(`${API_URL}/api/verify`, { query });
       setResult(res.data);
       toast.success("Fact Check Complete");
     } catch (e) { toast.error("Connection Error"); }

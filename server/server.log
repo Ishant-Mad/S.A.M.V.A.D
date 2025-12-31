@@ -1,0 +1,8 @@
+🚀 index.js loaded
+✅ S.A.M.V.A.D Engine running on http://localhost:5000
+📊 Available endpoints:
+   - GET  /api/queue
+   - POST /api/queue/:id/resolve
+   - GET  /api/stats
+   - POST /api/verify
+❌ Port 5000 is already in use. Please free the port or use a different one.
